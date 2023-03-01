@@ -11,9 +11,11 @@ import os
 app = Flask(__name__)
 
 @app.route("/", methods = ['GET'])
+@cross_origin()
 def homepage():
     return render_template("index.html")
 
+@cross_origin()
 @app.route("/review" , methods = ['POST' , 'GET'])
 def index():
     if request.method == 'POST':
